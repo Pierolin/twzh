@@ -1,0 +1,66 @@
+------------ Event --------------
+<view id="tapTest" data-hi="Piero" bindtap="tapName">Click me</view>
+------------ Template --------------
+<template name="even">
+    <view>Even</view>
+</template>
+
+<template name="odd">
+    <view>Odd</view>
+</template>
+
+<block wx:for="{{[1,7,12,34,9,2,3,4]}}" wx:key="*this">
+    <template is="{{item%2==0?'even':'odd'}}"/>
+</block>
+------------ data --------------
+<view>{{text}}</view>
+<view>{{array[0].msg}}</view>
+<view>{{author.name + ' - ' + author.sex + '-' + author.age}}</view>
+----------- tap,if & for---------------
+<view bindtap="viewTap">Click me</view>
+<view wx:for="{{letters}}" wx:key="*this">{{item}}</view>
+<view wx:if="{{view=='WEBVIEW'}}"> WEBVIEW </view>
+<view wx:elif="{{view=='APP'}}"> APP </view>
+<view wx:elif="{{view=='MINA'}}"> MINA </view>
+<view wx:else> {{view}} </view>
+------------ template 2--------------
+<template name="staffName">
+    <view>
+        First Name:{{firstName}} Last Name:{{lastName}}
+    </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+--------------------------
+<view bindtap="add">{{count}}</view>
+<block wx:if="{{count>3}}">
+    <view>HELLO</view>
+    <view>WORLD</view>
+</block>
+<block wx:if="{{count<=3}}">
+    <view>KISS</view>
+    <view>ME</view>
+</block>
+--------------------------
+<block wx:for="{{[1,2,3]}}" wx:key="*this">
+    <view>{{index}}:</view>
+    <view>{{item}}</view>
+</block>
+
+--------------------------
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+--------------------------
+<view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:key="*this" wx:for-item="i">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:key="*this" wx:for-item="j">
+        <view wx:if="{{i<=j}}">{{i}} x {{j}} = {{i*j}}</view> 
+    </view>
+</view>
+-----------------------
+<view id="vw1" data-fist-name="Piero" data-last-name="Lin" bindtap="printLog">Click Me</view>

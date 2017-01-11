@@ -1,0 +1,46 @@
+{
+    "pages":[
+        "pages/index/index",
+        "pages/toy/add_toy",
+        "pages/my/my",
+        "pages/logs/logs"
+    ],
+    "window":{
+        "navigationBarTitleText":"童玩置换",
+        "navigationBarBackgroundColor":"#000",
+        "navigationBarTextStyle":"white",
+        "backgroundColor":"#eee",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh":true
+    },
+    "tabBar":{
+        "color":"#aaa",
+        "selectedColor":"#fff",
+        "backgroundColor":"#000",
+        "borderStyle":"black",
+        "posision":"top",
+        "list":[
+            {
+                "text":"玩具",
+                "pagePath":"pages/index/index",
+                "iconPath":"",
+                "selectedIconPath":""
+            },
+            {
+                "text":"发布",
+                "pagePath":"pages/toy/add_toy"
+            },
+            {
+                "text":"我的",
+                "pagePath":"pages/my/my",
+                "iconPath":"",
+                "selectedIconPath":""
+            }
+        ]
+    },
+    "networkTimeout":{
+        "request":1000,
+        "downloadFile":1000
+    },
+    "debug":true
+}
